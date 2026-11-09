@@ -9,7 +9,7 @@ interface ScrollyCardProps {
   total: number;
 }
 
-export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }) => {
+export const ScrollyCard: React.FC<ScrollyCardProps> = React.memo(({ reason, index, total }) => {
   const [likes, setLikes] = useState(0);
   const [showHeartBurst, setShowHeartBurst] = useState(false);
 
@@ -24,14 +24,10 @@ export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }
   return (
     <div
       id={`reason-card-${index}`}
-      className="min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center py-4 sm:py-6 px-3 sm:px-4"
+      className="min-h-[42vh] sm:min-h-[48vh] flex items-center justify-center py-4 sm:py-6 px-3 sm:px-4"
     >
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.4 }}
-        className="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-9 border border-champagne-200/90 shadow-card hover:shadow-candle transition-all duration-300 relative overflow-hidden group"
+      <div
+        className="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-9 border border-champagne-200/90 shadow-card hover:shadow-candle transition-shadow duration-300 relative overflow-hidden group select-none"
       >
         {/* Top Header: Reason Number (Centered) */}
         <div className="flex items-center justify-center gap-2 mb-5 border-b border-champagne-100/80 pb-3">
@@ -43,7 +39,7 @@ export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }
           </span>
         </div>
 
-        {/* Reason Content (Pure Intimate Words) */}
+        {/* Reason Content (Pure Intimate Words - Rock Solid, Zero Blinking) */}
         <p className="font-serif text-base sm:text-lg text-champagne-900 leading-relaxed sm:leading-loose mb-6">
           {reason.description}
         </p>
@@ -82,7 +78,7 @@ export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }
             )}
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
-};
+});

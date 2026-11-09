@@ -79,8 +79,8 @@ export const MemoryGacha: React.FC = () => {
           Discovered <span className="text-roseGold-700 font-bold">{discoveredIds.size}</span> of {memories.length} moments
         </div>
 
-        {/* Polaroid Display or Initial Roll Prompt */}
-        <div className="min-h-[380px] flex items-center justify-center mb-8">
+        {/* Polaroid Display or Initial Roll Prompt with fixed min-height to prevent layout shifts */}
+        <div className="min-h-[440px] flex items-center justify-center mb-8">
           <AnimatePresence mode="wait">
             {isRolling ? (
               <motion.div
@@ -88,7 +88,7 @@ export const MemoryGacha: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.15 } }}
-                className="w-72 sm:w-80 h-96 bg-champagne-100/90 rounded-3xl border-2 border-dashed border-champagne-300 flex flex-col items-center justify-center p-6 shadow-soft"
+                className="w-72 sm:w-80 h-[380px] bg-champagne-100/90 rounded-3xl border-2 border-dashed border-champagne-300 flex flex-col items-center justify-center p-6 shadow-soft select-none"
               >
                 <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center shadow-sm mb-3">
                   <Dices className="w-8 h-8 text-roseGold-500 animate-spin" />
@@ -101,26 +101,27 @@ export const MemoryGacha: React.FC = () => {
               /* Polaroid Card Presentation */
               <motion.div
                 key={currentMemory.id}
-                initial={{ opacity: 0, scale: 0.88, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0, rotate: 1.5 }}
-                exit={{ opacity: 0, scale: 0.88, transition: { duration: 0.15 } }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full max-w-sm bg-white rounded-2xl p-4 sm:p-5 pb-6 border border-champagne-200 shadow-2xl relative select-none"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1, rotate: 1.5 }}
+                exit={{ opacity: 0, scale: 0.92, transition: { duration: 0.15 } }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full max-w-sm bg-white rounded-2xl p-4 sm:p-5 pb-6 border border-champagne-200 shadow-2xl relative select-none touch-pan-y"
               >
                 {/* Washi Tape Decal on Top */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-champagne-200/70 border border-champagne-300/60 rounded-sm rotate-[-2deg] shadow-xs" />
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-champagne-200/70 border border-champagne-300/60 rounded-sm rotate-[-2deg] shadow-xs pointer-events-none" />
 
                 {/* Photo Frame */}
                 <div
-                  className="relative aspect-square w-full rounded-xl overflow-hidden bg-champagne-100 border border-champagne-100 shadow-inner cursor-pointer"
+                  className="relative aspect-square w-full rounded-xl overflow-hidden bg-champagne-100 border border-champagne-100 shadow-inner cursor-pointer touch-pan-y select-none"
                   onMouseEnter={handleStartLive}
                   onMouseLeave={handleStopLive}
                   onClick={toggleLiveOnMobile}
                 >
                   <img
+                    draggable={false}
                     src={currentMemory.imageUrl}
                     alt={currentMemory.caption}
-                    className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                    className={`w-full h-full object-cover object-center transition-opacity duration-300 pointer-events-none select-none ${
                       isPlayingLive ? 'opacity-0' : 'opacity-100'
                     }`}
                   />
@@ -134,8 +135,8 @@ export const MemoryGacha: React.FC = () => {
                       muted
                       loop
                       preload="metadata"
-                      className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${
-                        isPlayingLive ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                      className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 pointer-events-none ${
+                        isPlayingLive ? 'opacity-100' : 'opacity-0'
                       }`}
                     />
                   )}
@@ -143,7 +144,7 @@ export const MemoryGacha: React.FC = () => {
                   {/* Live Photo Badge */}
                   {currentMemory.videoUrl && (
                     <div
-                      className={`absolute top-2.5 left-2.5 z-10 flex items-center gap-1 px-2 py-0.5 rounded-full backdrop-blur-md text-[10px] font-medium transition-all ${
+                      className={`absolute top-2.5 left-2.5 z-10 flex items-center gap-1 px-2 py-0.5 rounded-full backdrop-blur-md text-[10px] font-medium transition-all pointer-events-none ${
                         isPlayingLive
                           ? 'bg-roseGold-500/90 text-white'
                           : 'bg-black/45 text-white/90'
@@ -171,7 +172,7 @@ export const MemoryGacha: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.15 } }}
-                className="w-72 sm:w-80 h-80 bg-white/70 backdrop-blur-md rounded-3xl border-2 border-champagne-200 flex flex-col items-center justify-center p-6 text-center shadow-card"
+                className="w-72 sm:w-80 h-[380px] bg-white/70 backdrop-blur-md rounded-3xl border-2 border-champagne-200 flex flex-col items-center justify-center p-6 text-center shadow-card select-none"
               >
                 <div className="w-16 h-16 rounded-2xl bg-champagne-100 flex items-center justify-center text-champagne-700 mb-4 shadow-inner">
                   <Dices className="w-8 h-8 text-roseGold-600 stroke-[1.75]" />

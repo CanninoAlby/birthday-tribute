@@ -24,12 +24,8 @@ export const BirthdayCake: React.FC<BirthdayCakeProps> = ({ onOpenLetter }) => {
   };
 
   return (
-    <section className="min-h-[85vh] flex flex-col items-center justify-center px-4 py-16 text-center relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
+    <section className="min-h-[80vh] flex flex-col items-center justify-center px-4 py-16 text-center relative z-10">
+      <div
         className="w-full max-w-xl bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-champagne-200/90 shadow-card relative overflow-hidden"
       >
         {/* Ambient Candlelight Glow */}
@@ -272,7 +268,7 @@ export const BirthdayCake: React.FC<BirthdayCakeProps> = ({ onOpenLetter }) => {
             </motion.div>
           )}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

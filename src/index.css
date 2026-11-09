@@ -6,6 +6,18 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    touch-action: pan-y;
+  }
+
+  /* Prevent mobile image dragging and gesture hijacking */
+  img, video {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
 
   /* Custom subtle scrollbar */
