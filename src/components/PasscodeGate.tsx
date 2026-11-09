@@ -91,7 +91,7 @@ export const PasscodeGate: React.FC<PasscodeGateProps> = ({ onUnlock }) => {
               autoFocus
               value={enteredCode}
               onChange={(e) => setEnteredCode(e.target.value)}
-              placeholder="Enter passcode..."
+              placeholder="Type your answer..."
               className={`w-full px-5 py-3.5 rounded-2xl bg-champagne-50/70 border text-center font-sans tracking-widest text-lg text-champagne-900 placeholder:text-champagne-400 placeholder:tracking-normal focus:outline-none transition-all duration-200 ${
                 error
                   ? 'border-red-400 ring-2 ring-red-200 bg-red-50/50'

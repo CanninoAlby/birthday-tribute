@@ -16,11 +16,10 @@ export const giftConfig: GiftConfig = {
   },
 
   security: {
-    // Passcode to unlock the site (e.g. DDMM birthdate, or special word)
-    passcode: "1234",
-    passcodeHint: "Hint: Default test code is 1234 (Change to her birthday DDMM in src/config/giftConfig.ts)",
+    passcode: "seng",
+    passcodeHint: "our version of sayang",
     lockScreenTitle: "A Special Delivery For You",
-    lockScreenSubtitle: "Enter the secret passcode to unwrap your birthday surprise",
+    lockScreenSubtitle: "what are the most common nickname that we call eachother with",
   },
 
   audio: {
