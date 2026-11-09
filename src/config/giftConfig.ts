@@ -1,0 +1,270 @@
+import { GiftConfig } from '../types';
+
+/**
+ * -------------------------------------------------------------
+ * BIRTHDAY GIFT CONFIGURATION
+ * -------------------------------------------------------------
+ * Customize all details, photos, text, and music in this file.
+ * Place your own photos into `/public/photos/` or use direct URLs.
+ */
+export const giftConfig: GiftConfig = {
+  recipient: {
+    name: "My Dearest",
+    nickname: "Sunshine",
+    age: 25,
+    birthdayDate: "November 9",
+  },
+
+  security: {
+    // Passcode to unlock the site (e.g. DDMM birthdate, or special word)
+    passcode: "1234",
+    passcodeHint: "Hint: Default test code is 1234 (Change to her birthday DDMM in src/config/giftConfig.ts)",
+    lockScreenTitle: "A Special Delivery For You",
+    lockScreenSubtitle: "Enter the secret passcode to unwrap your birthday surprise",
+  },
+
+  audio: {
+    title: "Harum Manis",
+    artist: "JoRaffi",
+    audioUrl: "/music.mp3",
+    autoPlayPrompt: "Tap to play our song",
+  },
+
+  hero: {
+    badge: "Happy 25th birthday, love",
+    title: "25 Reasons Why You Are Truly Special",
+    titleNumber: "25",
+    titleLine1: "Reasons Why",
+    titleLine2: "You Are Truly Special",
+    subtitle: "",
+    scrollPrompt: "Scroll down to see how special you are through my eyes",
+  },
+
+  reasons: [
+    {
+      id: 1,
+      title: "Quiet Comfort",
+      description: "if someone told me during our kkn days that the girl i felt so strangely at ease with would end up saving me, i wouldn't have believed them. you were always a quiet comfort, i just didn't know how much i’d eventually need it.",
+      imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80",
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-woman-smiling-happily-41315-large.mp4",
+      date: "KKN Days",
+      location: "Where it began",
+    },
+    {
+      id: 2,
+      title: "Rewriting the Script",
+      description: "it’s funny how life turns on a dime. one random dm's, and suddenly the universe was rewriting my entire script just to put you back in it.",
+      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80",
+      date: "One Random DM",
+      location: "The turning point",
+    },
+    {
+      id: 3,
+      title: "Sitting in the Dark With Me",
+      description: "you met me at the absolute bottom. i was six months out of a storm, holding onto broken pieces, and you didn't even flinch at the mess. you just sat down next to me in the dark.",
+      imageUrl: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=80",
+      date: "In the Storm",
+      location: "Right beside me",
+    },
+    {
+      id: 4,
+      title: "Fearless",
+      description: "you are the most fearless person i know. you walked into a situation that had \"risk\" written all over it, and you just smiled. you didn't guard your heart, you put it right on the line for me.",
+      imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80",
+      date: "Unconditional",
+      location: "Bravery",
+    },
+    {
+      id: 5,
+      title: "No Mind Games",
+      description: "i love how you don't do mind games. when you looked at me and established we were in a \"get-to-know\" phase, you anchored me. you knew what we were doing, even when i was completely lost.",
+      imageUrl: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=80",
+      date: "Get-to-know Phase",
+      location: "Our Anchor",
+    },
+    {
+      id: 6,
+      title: "A Quiet Rebellion",
+      description: "i tried to test you, you know. in those early days, i showed you the ugly parts and the unresolved baggage, quietly hoping you’d walk away so i wouldn't have to risk ruining things later. but your stubbornness is a beautiful thing. i pushed, and instead of leaving, you just pulled up a chair and stayed. it felt like a quiet rebellion against all my insecurities.",
+      imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80",
+      date: "Early Days",
+      location: "You Stayed",
+    },
+    {
+      id: 7,
+      title: "The Quiet Relief",
+      description: "somewhere between the heavy talks and the hesitant steps, i started noticing how easy it was just being next to you. no guards, no pretense. silence with you stopped feeling lonely and started feeling like home.",
+      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=80",
+      date: "Finding Ease",
+      location: "In your quiet presence",
+    },
+    {
+      id: 8,
+      title: "Without a Finish Line",
+      description: "you poured everything into us without demanding a guarantee. who does that? who just loves someone purely for the sake of giving love, without a finish line in mind? you did.",
+      imageUrl: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=80",
+      date: "Pure Heart",
+      location: "Everything you gave",
+    },
+    {
+      id: 9,
+      title: "A Mystery of Patience",
+      description: "your patience is a mystery i will never fully comprehend. i was so caught up in my own head, so blind to the depth of your feelings. you just waited for me to catch up.",
+      imageUrl: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1000&q=80",
+      date: "Patiently Waiting",
+      location: "Until I saw",
+    },
+    {
+      id: 10,
+      title: "Offering a Lifeline",
+      description: "i look back at my ignorance and i want to shake my past self. you were standing right there, offering me a lifeline, and i was too scared to even open my eyes.",
+      imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      date: "Open Eyes",
+      location: "Lifeline",
+    },
+    {
+      id: 11,
+      title: "Repairs in Progress",
+      description: "thank you for not giving up on me while i was figuring out how to heal. you didn't demand that i be fixed before i could be loved. you just held my hand through the repairs.",
+      imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80",
+      date: "Healing",
+      location: "Hand in hand",
+    },
+    {
+      id: 12,
+      title: "Raw and Unedited",
+      description: "you showed me what it means to be truly seen. not the polished, put-together version of me, but the raw, unedited me. and you chose him anyway.",
+      imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      date: "Truly Seen",
+      location: "Chosen anyway",
+    },
+    {
+      id: 13,
+      title: "Love That Feels Light",
+      description: "i never knew love could feel this light. you gave me experiences that completely rewired my brain, showing me what the world looks like when someone genuinely cares about you.",
+      imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=1000&q=80",
+      date: "Rewired",
+      location: "Weightless",
+    },
+    {
+      id: 14,
+      title: "Grace for the Unlovable",
+      description: "how you teach me to love me. you looked at all the parts of myself i thought were unlovable, and you treated them with so much grace that i had no choice but to start doing the same.",
+      imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
+      date: "Grace",
+      location: "Teaching me",
+    },
+    {
+      id: 15,
+      title: "Completely Bare",
+      description: "you are the only person i have ever laid myself completely bare for. the fear of not being accepted vanished the second i realized you were already holding all of me.",
+      imageUrl: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1000&q=80",
+      date: "Vulnerability",
+      location: "Holding me",
+    },
+    {
+      id: 16,
+      title: "That Specific Warmth",
+      description: "there is a specific kind of warmth that only you possess. it's in the way you listened when we caught up with our old friends, making me feel like the only person in the room.",
+      imageUrl: "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?auto=format&fit=crop&w=1000&q=80",
+      date: "That Warmth",
+      location: "The only one in the room",
+    },
+    {
+      id: 17,
+      title: "Loved Exactly Where I Was",
+      description: "you didn't try to fix me. that’s the magic of it. you just loved me exactly where i was, and that unconditional love ended up being the very thing that healed me.",
+      imageUrl: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&q=80",
+      date: "Unconditional",
+      location: "Where I was",
+    },
+    {
+      id: 18,
+      title: "Winning the Bet",
+      description: "you took a massive gamble on a guy who was still fighting ghosts. i will spend the rest of my life making sure you know that you won that bet.",
+      imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80",
+      date: "A Gamble",
+      location: "You won",
+    },
+    {
+      id: 19,
+      title: "Still Choosing Me",
+      description: "i wake up sometimes and it still hits me—you are actually here. after all my hesitations, my walls, and my ignorance, you are still the one choosing me every single day.",
+      imageUrl: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?auto=format&fit=crop&w=1000&q=80",
+      date: "Every Morning",
+      location: "You're actually here",
+    },
+    {
+      id: 20,
+      title: "My Safe House",
+      description: "you didn't just give me a relationship; you gave me a safe house. a place where i don't have to pretend to be anything other than what i am.",
+      imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80",
+      date: "Safe House",
+      location: "No pretense",
+    },
+    {
+      id: 21,
+      title: "Home Out of Chaos",
+      description: "you are the bravest choice i never knew i was making. you stepped into my chaos and somehow built a home out of it.",
+      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80",
+      date: "Bravest Choice",
+      location: "Built a home",
+    },
+    {
+      id: 22,
+      title: "The Greatest Privilege",
+      description: "to be loved by you is the greatest privilege of my life. it’s an experience i never thought i’d get to have, and now it's the only one i ever want.",
+      imageUrl: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=80",
+      date: "Greatest Privilege",
+      location: "My only wish",
+    },
+    {
+      id: 23,
+      title: "Thank You for Staying",
+      description: "so thank you. for the reckless bravery, the crazy patience, and for staying like it was nothing. thank you for being you.",
+      imageUrl: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=80",
+      date: "Thank You",
+      location: "For staying",
+    },
+    {
+      id: 24,
+      description: "to all the quiet, ordinary moments that somehow became my favorites—making food together, sharing glances across a crowded room, and knowing that as long as i have your hand in mine, everything is going to be alright.",
+    },
+    {
+      id: 25,
+      description: "and now here you are, turning 25. i hope this year gives you back all the gentleness, wonder, and joy you have poured into my life. i can't wait for every single chapter ahead with you.",
+    },
+  ],
+
+  // 📸 Memory Gacha Pool: Add any number of your favorite couple photos here!
+  memories: [
+    { id: 1, imageUrl: "/photos/memory-1.jpeg", caption: "" },
+    { id: 2, imageUrl: "/photos/memory-2.jpeg", caption: "" },
+    { id: 3, imageUrl: "/photos/memory-3.jpeg", caption: "" },
+    { id: 4, imageUrl: "/photos/memory-4.jpeg", caption: "" },
+    { id: 5, imageUrl: "/photos/memory-5.jpeg", caption: "" },
+    { id: 6, imageUrl: "/photos/memory-6.jpeg", caption: "" },
+    { id: 7, imageUrl: "/photos/memory-7.jpeg", caption: "" },
+    { id: 8, imageUrl: "/photos/memory-8.jpeg", caption: "" },
+    { id: 9, imageUrl: "/photos/memory-9.jpeg", caption: "" },
+    { id: 10, imageUrl: "/photos/memory-10.jpeg", caption: "" },
+    { id: 11, imageUrl: "/photos/memory-11.jpeg", caption: "" },
+  ],
+
+  finale: {
+    cakeTitle: "Make a Birthday Wish",
+    cakeSubtitle: "Blow out the candles to unlock your final birthday letter",
+    blowCandlesPrompt: "Click or tap the candles to blow them out",
+    candlesBlownMessage: "May all your sweetest wishes and dreams come true!",
+    letterTitle: "Happy 25th Birthday, Love",
+    letterSalutation: "To my favorite person,",
+    letterBody: [
+      "I don't think I will ever fully be able to put into words what having you in my life has done for me. Long before I even understood what was happening, you brought a kind of quiet peace into my world that I didn't even know I was searching for.",
+      "Thank you for being so effortlessly, stubbornly gentle with me. Thank you for never running from the messy parts, for holding my hand when things felt heavy, and for making love feel so light and safe. You never asked me to be anyone other than who I am, and somewhere along the way, the grace you gave me taught me how to finally be kind to myself too.",
+      "Happy 25th birthday, my love. I hope this year wraps you in as much warmth, wonder, and pure happiness as you have poured into my life. Out of all the turns life could have taken, having you beside me will always be the greatest blessing of my life.",
+      "And remember this: no, we're not soulmates. This is not divine intervention. And this is most certainly not chance. I willed this. I knit the threads of fate myself until they spelled your name. I love you intentionally. I love you with every bit of conscience I was born with."
+    ],
+    letterClosing: "Forever in your corner,",
+    senderName: "Yours Always",
+  },
+};
