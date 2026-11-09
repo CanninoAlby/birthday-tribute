@@ -24,13 +24,13 @@ export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }
   return (
     <div
       id={`reason-card-${index}`}
-      className="min-h-[55vh] sm:min-h-[60vh] flex items-center justify-center py-6 sm:py-8 px-3 sm:px-4 snap-center"
+      className="min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center py-5 sm:py-7 px-3 sm:px-4"
     >
       <motion.div
-        initial={{ opacity: 0, y: 35, scale: 0.98 }}
+        initial={{ opacity: 0, y: 25, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: false, amount: 0.35 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-9 border border-champagne-200/90 shadow-card hover:shadow-candle transition-all duration-300 relative overflow-hidden group"
       >
         {/* Top Header: Reason Number */}

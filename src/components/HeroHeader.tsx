@@ -44,10 +44,10 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onScrollToStart }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mb-8 sm:mb-10 flex items-center justify-center gap-1.5 sm:gap-2.5 overflow-visible"
+        className="mb-8 sm:mb-10 flex items-center justify-center gap-1.5 sm:gap-2.5 overflow-visible max-w-full px-2"
       >
         {numberPart && (
-          <span className="font-serif italic font-normal text-7xl sm:text-8xl md:text-9xl bg-gradient-to-br from-roseGold-600 via-champagne-600 to-roseGold-700 bg-clip-text text-transparent drop-shadow-sm select-none leading-tight pt-2 pb-4 pl-1 pr-2.5 sm:pr-3.5 inline-block overflow-visible -translate-y-2 sm:-translate-y-3">
+          <span className="font-serif italic font-normal text-6xl sm:text-8xl md:text-9xl bg-gradient-to-br from-roseGold-600 via-champagne-600 to-roseGold-700 bg-clip-text text-transparent drop-shadow-sm select-none leading-tight pt-2 pb-4 pl-1 pr-3.5 sm:pr-4 inline-block overflow-visible -translate-y-1.5 sm:-translate-y-3 shrink-0">
             {numberPart}
           </span>
         )}
