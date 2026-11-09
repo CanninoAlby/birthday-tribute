@@ -24,25 +24,23 @@ export const ScrollyCard: React.FC<ScrollyCardProps> = ({ reason, index, total }
   return (
     <div
       id={`reason-card-${index}`}
-      className="min-h-[50vh] sm:min-h-[55vh] flex items-center justify-center py-5 sm:py-7 px-3 sm:px-4"
+      className="min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center py-4 sm:py-6 px-3 sm:px-4"
     >
       <motion.div
-        initial={{ opacity: 0, y: 25, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.4 }}
         className="w-full max-w-xl bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-9 border border-champagne-200/90 shadow-card hover:shadow-candle transition-all duration-300 relative overflow-hidden group"
       >
-        {/* Top Header: Reason Number */}
-        <div className="flex items-center justify-between mb-5 border-b border-champagne-100/80 pb-3">
-          <div className="flex items-center gap-2">
-            <span className="font-serif text-roseGold-600 font-bold text-lg sm:text-xl">
-              #{formattedNumber}
-            </span>
-            <span className="text-xs uppercase tracking-widest text-champagne-400 font-sans">
-              of {total}
-            </span>
-          </div>
+        {/* Top Header: Reason Number (Centered) */}
+        <div className="flex items-center justify-center gap-2 mb-5 border-b border-champagne-100/80 pb-3">
+          <span className="font-serif text-roseGold-600 font-bold text-lg sm:text-xl">
+            #{formattedNumber}
+          </span>
+          <span className="text-xs uppercase tracking-widest text-champagne-400 font-sans">
+            of {total}
+          </span>
         </div>
 
         {/* Reason Content (Pure Intimate Words) */}

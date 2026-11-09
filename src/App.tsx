@@ -19,30 +19,43 @@ export const App: React.FC = () => {
 
   const totalReasons = giftConfig.reasons.length;
 
-  // Track active card via scroll
+  // Track active card via native IntersectionObserver (Zero forced reflows, 60fps smooth)
   useEffect(() => {
     if (!isUnlocked) return;
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const heroThreshold = window.innerHeight * 0.5;
-
-      setShowProgressBar(scrollY > heroThreshold);
-
-      // Determine active card
-      giftConfig.reasons.forEach((_, idx) => {
-        const el = document.getElementById(`reason-card-${idx}`);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            setActiveReasonIndex(idx);
-          }
-        }
-      });
+      setShowProgressBar(window.scrollY > window.innerHeight * 0.35);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const match = id.match(/reason-card-(\d+)/);
+            if (match) {
+              setActiveReasonIndex(parseInt(match[1], 10));
+            }
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -40% 0px',
+        threshold: 0.1,
+      }
+    );
+
+    giftConfig.reasons.forEach((_, idx) => {
+      const el = document.getElementById(`reason-card-${idx}`);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, [isUnlocked, totalReasons]);
 
   const scrollToFirstReason = () => {
